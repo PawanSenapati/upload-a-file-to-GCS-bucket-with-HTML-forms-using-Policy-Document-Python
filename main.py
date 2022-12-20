@@ -2,11 +2,11 @@ import datetime
 import flask
 from google.oauth2 import service_account
 
-credentials = service_account.Credentials.from_service_account_file('cts01-psenapati-2e6bb52d5e77.json')
+credentials = service_account.Credentials.from_service_account_file('/path/to/key.json')
 
 from google.cloud import storage
 app = flask.Flask(__name__)
-default_bucket_name = 'cts01-psenapati'
+default_bucket_name = 'BUCKET_NAME'
 
 def generate_signed_post_policy_v4(bucket_name, blob_name):
     """Generates a v4 POST Policy and prints an HTML form."""
